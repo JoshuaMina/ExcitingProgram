@@ -57,3 +57,12 @@ def fullboard():
                 return False
 
     return True
+
+Board = np.zeros((Rows,Columns))
+pygame.init()
+pygame.display.set_caption("TIC TAC TOE GAME by PythonGeeks")
+Screen = pygame.display.set_mode((widthofscreen, heightofscreen))
+Screen.fill(backgroundcolour)
+drawlines()
+pygame.display.update()
+
