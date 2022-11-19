@@ -142,3 +142,37 @@ def drawdiagonalline(player, down_diag=True):
             pygame.draw.line(Screen, colorofcircle, (25, heightofscreen - 25), (widthofscreen - 25, 25), xlinewidth)
         else:
             pygame.draw.line(Screen, xcolor, (25, heightofscreen - 25), (widthofscreen - 25, 25), xlinewidth)
+
+while True:
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            sys.exit()
+
+        if event.type == pygame.MOUSEBUTTONDOWN and not gameover:
+            positiony = event.pos[1]
+            row = int(math.floor(positiony / sizeofsquare))
+            positionx = event.pos[0]
+            col = int(math.floor(positionx / sizeofsquare))
+
+            if player % 2 == 0:
+                if availablesquare(row, col):
+                    marksquare(row, col, 1)
+
+                    if win(1):
+                        gameover = True
+
+                    player += 1
+
+            else:
+                if availablesquare(row, col):
+                    marksquare(row, col, 2)
+
+                    if win(2):
+                        gameover = True
+
+                    player += 1
+
+            if fullboard():
+                gameover = True
+
