@@ -20,3 +20,7 @@ player = 0
 gameover = False
 inmenu = True
 
+def printingboard():
+    flippedboard = np.flip(Board, 0)
+    print(flippedboard)
+    print("")
