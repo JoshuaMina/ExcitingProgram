@@ -176,3 +176,5 @@ while True:
             if fullboard():
                 gameover = True
 
+    drawfigures()
+    pygame.display.update()
