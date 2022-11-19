@@ -66,3 +66,22 @@ Screen.fill(backgroundcolour)
 drawlines()
 pygame.display.update()
 
+
+def availablesquare(row, col):
+    is_available = Board[row][col] == 0
+    return is_available
+
+
+def marksquare(row, col, player):
+    Board[row][col] = player
+
+
+def win(player):
+    verwin = verticalwin(player)
+    horwin = horizontalwin(player)
+    diagwin = diagonalwin(player)
+
+    if verwin or horwin or diagwin:
+        return True
+    else:
+        return False
