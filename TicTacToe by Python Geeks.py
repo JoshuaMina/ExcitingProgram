@@ -85,3 +85,20 @@ def win(player):
         return True
     else:
         return False
+
+def verticalwin(player):
+    for col in range(Columns):
+        if Board[0][col] == player and Board[1][col] == player and Board[2][col] == player:
+            drawverticalline(col, player)
+            return True
+
+    return False
+
+
+def horizontalwin(player):
+    for row in range(Rows):
+        if Board[row][0] == player and Board[row][1] == player and Board[row][2] == player:
+            drawhorizontalline(row, player)
+            return True
+
+    return False
