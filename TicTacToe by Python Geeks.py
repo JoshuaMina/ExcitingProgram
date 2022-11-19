@@ -121,3 +121,24 @@ def drawverticalline(col, player):
         pygame.draw.line(Screen, colorofcircle, (posX, 10), (posX, heightofscreen - 10), circlelinewidth)
     else:
         pygame.draw.line(Screen, xcolor, (posX, 10), (posX, heightofscreen - 10), circlelinewidth)
+
+def drawhorizontalline(row, player):
+    posY = row * sizeofsquare + sizeofsquare / 2
+
+    if player == 1:
+        pygame.draw.line(Screen, colorofcircle, (10, posY), (widthofscreen - 10, posY), circlelinewidth)
+    else:
+        pygame.draw.line(Screen, xcolor, (10, posY), (widthofscreen - 10, posY), circlelinewidth)
+
+
+def drawdiagonalline(player, down_diag=True):
+    if down_diag:
+        if player == 1:
+            pygame.draw.line(Screen, colorofcircle, (25, 25), (widthofscreen - 25, heightofscreen - 25), xlinewidth)
+        else:
+            pygame.draw.line(Screen, colorofcircle, (25, 25), (widthofscreen - 25, heightofscreen - 25), xlinewidth)
+    else:
+        if player == 1:
+            pygame.draw.line(Screen, colorofcircle, (25, heightofscreen - 25), (widthofscreen - 25, 25), xlinewidth)
+        else:
+            pygame.draw.line(Screen, xcolor, (25, heightofscreen - 25), (widthofscreen - 25, 25), xlinewidth)
