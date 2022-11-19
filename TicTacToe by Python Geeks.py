@@ -24,3 +24,13 @@ def printingboard():
     flippedboard = np.flip(Board, 0)
     print(flippedboard)
     print("")
+
+def drawboard():
+    drawlines()
+    drawfigures()
+
+def drawlines():
+    pygame.draw.line(Screen, colorofline, (0, 200), (600, 200), 10)
+    pygame.draw.line(Screen, colorofline, (0, 400), (600, 400), 10)
+    pygame.draw.line(Screen, colorofline, (200, 0), (200, 600), 10)
+    pygame.draw.line(Screen, colorofline, (400, 0), (400, 600), 10)
