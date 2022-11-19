@@ -50,3 +50,10 @@ def drawfigures():
                                  (col * sizeofsquare + offset, row * sizeofsquare + sizeofsquare - offset),
                                  (col * sizeofsquare + sizeofsquare - offset, row * sizeofsquare + offset), xlinewidth)
 
+def fullboard():
+    for col in range(Columns):
+        for row in range(Rows):
+            if Board[row][col] == 0:
+                return False
+
+    return True
