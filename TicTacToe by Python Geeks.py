@@ -102,3 +102,22 @@ def horizontalwin(player):
             return True
 
     return False
+
+def diagonalwin(player):
+    if Board[0][0] == player and Board[1][1] == player and Board[2][2] == player:
+        drawdiagonalline(player)
+        return True
+    elif Board[2][0] == player and Board[1][1] == player and Board[0][2] == player:
+        drawdiagonalline(player, False)
+        return True
+    else:
+        return False
+
+
+def drawverticalline(col, player):
+    posX = col * sizeofsquare + sizeofsquare / 2
+
+    if player == 1:
+        pygame.draw.line(Screen, colorofcircle, (posX, 10), (posX, heightofscreen - 10), circlelinewidth)
+    else:
+        pygame.draw.line(Screen, xcolor, (posX, 10), (posX, heightofscreen - 10), circlelinewidth)
